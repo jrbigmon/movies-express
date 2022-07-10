@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Filmes</title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+    </figure>
+    <h1>LISTA DE FILMES</h1>
+    <a href="/movies/recommended"> <h1> Recommended </h1></a>
+    <a href="/movies/new"> <h1> News </h1></a>
+    <ul>
+        <% movies.forEach(movie => { %>
+        <li>
+            <a href="/movies/detail/<%= movie.id %>"> <%= movie.title %></a>
+        </li>
+        <% }) %>
+
+    </ul>
+</body>
+
+</html>
