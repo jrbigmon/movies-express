@@ -5,6 +5,7 @@ const moviesController = {
         const movies = await Movie.findAll();
         return res.render('moviesList', { movies });
     },
+
     detail: async (req, res) => {
         const {id} = req.params;
         const movie = await Movie.findOne({
@@ -15,6 +16,7 @@ const moviesController = {
         });
         return res.render('moviesDetail', { movie });
     },
+
     recomended: async (req, res) => {
         const movies = await Movie.findAll({
             order : [
@@ -23,6 +25,7 @@ const moviesController = {
         });
         return res.render('recommendedMovies', { movies })
     },
+    
     new: async (req, res) => {
         const movies = await Movie.findAll({
             order: [

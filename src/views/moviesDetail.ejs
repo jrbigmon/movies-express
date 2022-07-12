@@ -9,7 +9,7 @@
 </head>
 <body>
     <figure>
-        <img src="/img/logo-DH.png" alt="Logo Digital House">
+        <a href="/"> <img src="/img/logo-DH.png" alt="Logo Digital House"></a>
     </figure>
     <h1><%= movie.title %> </h1>    
     <br>
@@ -19,7 +19,7 @@
     <p>RATING: <%= movie.rating %> </p>
     <p>AWARDS: <%= movie.awards %> </p>
     <p>LENGTH: <%= movie.length == null ? `not data`: `${movie.length} min` %> </p>
-    <p>RELEASE DATE: <%= movie.release_date %> </p>
+    <p>RELEASE DATE: <%= movie.release_date.toLocaleDateString('pt-BR') %> </p>
     <p>GENRE: <%= movie.genres != null ? movie.genres.name : 'unknown' %> </p>
 </body>
 </html>

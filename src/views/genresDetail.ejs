@@ -9,15 +9,17 @@
 </head>
 <body>
     <figure>
-        <img src="/img/logo-DH.png" alt="Logo Digital House">
+        <a href="/"> <img src="/img/logo-DH.png" alt="Logo Digital House"></a>
     </figure>    
     <h1><%= genre.name %> </h1>
     <br>
     <p>NAME: <%= genre.name %> </p>
     <p>RANKIG: <%= genre.ranking %> </p>
+    <p> MOVIES NUMBER: <%= movies.length %> </p>
     <br>
-    <a href="/genres"> Return genres list </a>
-    <br>
-    <a href="/"> Return home page </a>
+    <ul>
+        <li> <a href="/genres"> Genres List </a> </li>
+        <li> <a href="/genres/list/movies/<%= genre.id %>"> View all movies this genre </a> </li>
+    </ul>
 </body>
 </html>

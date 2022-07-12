@@ -4,21 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Gêneros</title>
+    <title>Lista de Filmes</title>
     <link rel='stylesheet' href='/css/style.css' />
 
 </head>
 
 <body>
+
     <figure>
         <a href="/"> <img src="/img/logo-DH.png" alt="Logo Digital House"></a>
-      </figure>
-    <h1>LISTA DE GÊNEROS</h1>
+    </figure>
+
+    <h1>LISTA DE FILMES DO GENERO: <%= genre.name %> </h1>
+    <br>
+    <a href="/genres"> Genres List </a>  
+    <br> <br>
     <ul>
-        <% genres.forEach(genre => { %>
-            <li>
-                <a href="/genres/detail/?genres=<%= genre.name %>"> <%= genre.name %> </a>
-            </li>
+        <% movies.forEach(movie => { %>
+        <li>
+            <%= movie.title %>
+        </li>
         <% }) %>
     </ul>
 </body>

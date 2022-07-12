@@ -1,4 +1,4 @@
-const { Genre } = require('../database/models');
+const { Genre, Movie } = require('../database/models');
 
 const genreController = {
     list: async (req, res) => {
@@ -6,9 +6,28 @@ const genreController = {
         return res.render('genresList', { genres });
     },
     detail: async (req, res) => {
-        const{ id } = req.params
-        const genre = await Genre.findByPk(id);
-        return res.render('genresDetail', { genre });
+        const{ genres } = req.query;
+        const genre = await Genre.findOne({
+            where: {
+                name: genres
+            }
+        });
+
+        const movies = await Movie.findAll({
+            where: {genre_id: genre.id},
+            association: 'genres'
+        })
+        return res.render('genresDetail', { genre, movies });
+    },
+    moviesFromGenres: async (req, res) => {
+        const { id } = req.params
+        const genre = await Genre.findOne({ where: {id} });
+
+        const movies = await Movie.findAll({
+            where: {genre_id: id},
+            association: 'genres'
+        })
+        return res.render('moviesGenresList', { movies, genre });
     }
 }
 
