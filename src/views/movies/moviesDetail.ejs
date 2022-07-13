@@ -21,5 +21,8 @@
     <p>LENGTH: <%= movie.length == null ? `not data`: `${movie.length} min` %> </p>
     <p>RELEASE DATE: <%= movie.release_date.toLocaleDateString('pt-BR') %> </p>
     <p>GENRE: <%= movie.genres != null ? movie.genres.name : 'unknown' %> </p>
+    <p><a href="/movies/detail/<%= movie.id %>/actors"> Ver Atores </a></p>
+    <p><a href="/movies/update/<%= movie.id %>"> Atualizar </a></p>
+    <p><a href="/movies/delete/<%= movie.id %>"> Deletar </a> </p>
 </body>
 </html>

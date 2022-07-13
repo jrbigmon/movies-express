@@ -1,5 +1,5 @@
 const { Op } = require('sequelize');
-const {Movie} = require('../index');
+const {Movie} = require('../models/index');
 
 const moviesAll = async () => {
     const movies = await Movie.findAll();

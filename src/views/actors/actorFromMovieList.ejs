@@ -10,21 +10,20 @@
 </head>
 
 <body>
-
     <figure>
         <a href="/"> <img src="/img/logo-DH.png" alt="Logo Digital House"></a>
     </figure>
-
-    <h1>LISTA DE FILMES DO GENERO: <%= genre.name %> </h1>
-    <br>
-    <a href="/genres"> Genres List </a>  
-    <br> <br>
+   
+    <br><br>
+    <h1>LISTA DE ATORES </h1>
     <ul>
-        <% movies.forEach(movie => { %>
+        <% actors.forEach(actor => { %>
         <li>
-            <%= movie.title %>
+            <%= actor.first_name + ' ' + actor.last_name + ' ' + ' || favorite movie: ' + actor.favorite_movie.title %>
         </li>
         <% }) %>
+
+        <a href="/movies/detail/<%= movie.id %>"> Voltar ao Filme </a>
     </ul>
 </body>
 

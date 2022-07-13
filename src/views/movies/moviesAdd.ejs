@@ -26,8 +26,17 @@
             <p><input type="date" name="release_date" id="" required></p>
             <label for="length">Length </label>
             <p><input type="number" name="length" id="" required></p>
-
+            <label for="genre">Generos:</label>
             <br>
+            <select name="genre_id" id="genre">
+                
+                <% genres.forEach(genre => { %>
+
+                <option value="<%= genre.id %>"> <%= genre.name %> </option>
+                
+                <% }) %> 
+            </select>
+            <br><br>
             <p> <button class="botaoAdicionar" type="submit">Adicionar</button>
             
             <a  class="botaoVoltar" href="/movies">Lista de Filmes</a></p>

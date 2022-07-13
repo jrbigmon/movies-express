@@ -1,4 +1,3 @@
-
 module.exports = (sequelize, DataType) => {
     const Movie = sequelize.define('Movie', 
     {
@@ -7,6 +6,7 @@ module.exports = (sequelize, DataType) => {
             primaryKey:true,
             autoIncrement:true
         },
+        
         title: DataType.STRING,
 
         rating: DataType.FLOAT,
@@ -35,6 +35,18 @@ module.exports = (sequelize, DataType) => {
         Movie.belongsTo(models.Genre, {
             foreignKey: 'genre_id',
             as: 'genres'
+        }),
+
+        Movie.hasMany(models.Actor, {
+            foreignKey: 'favorite_movie_id',
+            as: 'favorite_movie'
+        }),
+
+        Movie.belongsToMany(models.Actor,{
+            as: 'actors',
+            foreignKey:'movie_id',
+            otherKey: 'actor_id',
+            through: models.ActorMovie
         })
     }
     return Movie;
