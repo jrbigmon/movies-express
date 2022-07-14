@@ -20,7 +20,7 @@
         <% actors.forEach(actor => { %>
         <li>
             <%= actor.first_name + ' ' + actor.last_name %>
-            <p>Filme Favorito: <%= actor.favorite_movie.title %></p>
+            <a href="/movies/detail/<%=actor.favorite_movie.id %> "><p>Filme Favorito: <%= actor.favorite_movie.title %></p></a>
         </li> <br>
         <% }) %>
 

@@ -13,12 +13,14 @@
     </figure>
     <h1><%= `${actor.first_name} ${actor.last_name}` %></h1>  %> </h1>
     <p>Avaliação: <%= actor.rating %> </p>
-    <p>Filmes Favorito: <%= actor.favorite_movie != null ? actor.favorite_movie.title : 'Não possui!' %> </p>
+    <a href="/movies/detail/<%= actor.favorite_movie.id %> ">
+        <p>Filmes Favorito: <%= actor.favorite_movie != null ? actor.favorite_movie.title : 'Não possui!' %> </p>
+    </a>
     <ul>
         <h3>Filmes que participou: </h3>
         <% movies.forEach(movie => { %>
             <li>
-                <%= movie.title %> 
+                <a href="/movies/detail/<%= movie.id %> "><%= movie.title %></a> 
             </li>
         <% }) %> 
     </ul>
