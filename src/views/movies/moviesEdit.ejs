@@ -10,7 +10,7 @@
 
 <body>
     <figure>
-        <img src="/img/logo-DH.png" alt="Logo Digital House">
+        <a  class="botaoVoltar" href="/movies"><img src="/img/logo-DH.png" alt="Logo Digital House"> Voltar a Lista de Filmes</a></p>
       </figure>
     <h1 class="titulo">Filme a Editar:  <%= movie.title %></h1>
     <section class="formulario">
@@ -32,18 +32,16 @@
             
             <label for="genre">Genero:</label> <br>
             <select name="genre_id" id="genre">
-                
                 <% genres.forEach(genre => { %>
 
-                <option value="<%= genre.id %>"> <%= genre.name %> </option>
+                <option value="<%= genre.id %>" <%= genre.id == movie.genre_id ? 'selected' : ''%> > <%= genre.name %> </option>
                 
                 <% }) %> 
             </select>
-            
+
             <br><br>
             <p> <button class="botaoAtualizar" type="submit">Atualizar</button>
         
-            <a  class="botaoVoltar" href="/movies">Lista de Filmes</a></p>
         </form>
     </section>
 </body>

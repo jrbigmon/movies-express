@@ -56,7 +56,9 @@ const moviesController = {
     viewUpdate: async (req, res) => {
         const genres = await Genre.findAll();
         const {id} = req.params;
-        const movie = await Movie.findByPk(id) 
+        const movie = await Movie.findByPk(id, {
+            include: 'genres',
+        }) 
         return res.render('./movies/moviesEdit', {movie, genres});
     },
 

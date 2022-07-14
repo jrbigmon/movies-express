@@ -19,8 +19,9 @@
     <ul>
         <% actors.forEach(actor => { %>
         <li>
-            <%= actor.first_name + ' ' + actor.last_name + ' ' + ' || favorite movie: ' + actor.favorite_movie.title %>
-        </li>
+            <%= actor.first_name + ' ' + actor.last_name %>
+            <p>Filme Favorito: <%= actor.favorite_movie.title %></p>
+        </li> <br>
         <% }) %>
 
         <a href="/movies/detail/<%= movie.id %>"> Voltar ao Filme </a>
