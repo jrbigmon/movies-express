@@ -13,7 +13,9 @@
     </figure>
     <h1><%= `${actor.first_name} ${actor.last_name}` %></h1>  %> </h1>
     <p>Avaliação: <%= actor.rating %> </p>
-    <a href="/movies/detail/<%= actor.favorite_movie.id %> ">
+    <% if (actor.favorite_movie_id !== null){ %>
+        <a href="/movies/detail/<%= actor.favorite_movie.id %> ">
+    <% } %> 
         <p>Filmes Favorito: <%= actor.favorite_movie != null ? actor.favorite_movie.title : 'Não possui!' %> </p>
     </a>
     <ul>

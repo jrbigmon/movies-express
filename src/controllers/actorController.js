@@ -6,7 +6,10 @@ const actorController = {
         const movie = await Movie.findByPk(id, {
             include:[{
                 association: 'actors',
-                include: 'favorite_movie'
+                include: {
+                    association:'favorite_movie',
+                    attributes: ['title']
+                }
             }]
         })
         return res.render('./actors/actorsFromMovieList', { actors: movie.actors, movie })

@@ -29,8 +29,9 @@ module.exports = (sequelize, DataType) => {
     })
     
     Actor.associate = (models) => {
-        Actor.belongsTo(models.Movie, {
-            foreignKey: 'favorite_movie_id',
+        Actor.hasOne(models.Movie, {
+            sourceKey: 'favorite_movie_id',
+            foreignKey: 'id',
             as: 'favorite_movie'
         }),
 

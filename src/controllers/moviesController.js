@@ -11,7 +11,8 @@ const moviesController = {
         const movie = await Movie.findOne({
             where: {id},
             include:{
-                association: 'genres'
+                association: 'genres',
+                attributes: ['name']
             }
         });
         return res.render('./movies/moviesDetail', { movie });
@@ -57,7 +58,10 @@ const moviesController = {
         const genres = await Genre.findAll();
         const {id} = req.params;
         const movie = await Movie.findByPk(id, {
-            include: 'genres',
+            include:{
+                association: 'genres',
+                attributes: ['name']
+            }
         }) 
         return res.render('./movies/moviesEdit', {movie, genres});
     },

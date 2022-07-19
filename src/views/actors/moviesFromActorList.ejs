@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Filmes</title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+
+<body>
+    <figure>
+        <a href="/"> <img src="/img/logo-DH.png" alt="Logo Digital House"></a>
+    </figure>
+    
+    <br><br>
+    <h1>LISTA DE FILMES DO ATOR: <%= actor.first_name + ' ' + actor.last_name%>  </h1>
+    <ul>
+        <% movies.forEach(movie => { %>
+           <li> <%= movie.title %> </li> 
+        <% }) %>
+    </ul>
+    <br>
+    <a href="/actors"> Lista de Atores </a>
+</body>
+
+</html>
